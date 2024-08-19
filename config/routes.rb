@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'story/new'
+  get 'story/update'
+  get 'story/show'
+  get 'story/index'
   get 'user/new'
   get 'user/index'
-  get 'user/create'
   get 'user/edit'
   get 'user/update'
 
