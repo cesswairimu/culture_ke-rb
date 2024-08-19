@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'user/new'
+  get 'user/index'
+  get 'user/create'
+  get 'user/edit'
+  get 'user/update'
 
   root 'main_pages#home'
   get 'main_pages/about'
