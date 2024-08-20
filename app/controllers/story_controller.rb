@@ -3,6 +3,7 @@ class StoryController < ApplicationController
   end
 
   def create
+
   end
 
   def update

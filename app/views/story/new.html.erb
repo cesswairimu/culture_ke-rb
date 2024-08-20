@@ -1,4 +1,31 @@
 <div>
-  <h1 class="font-bold text-4xl">Story#new</h1>
-  <p>Find me in app/views/story/new.html.erb</p>
+  <h1 class="font-bold text-4xl text-blue-500">Write Something ....</h1>
+ 
+  <%= form_with model: @user, local: true do |form| %>
+    <div class="mb-6">
+      <%= form.label :title, class: "block mb-2 text-sm font-medium text-blue-900" %>
+      <%= form.text_field :email, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+    </div>
+    <div class="mb-6">
+      <%= form.label :body, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <%# <%= form.password_field :password, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+
+      <%= text_area_tag :content, "Ans so it goes ...", :class => "tinymce" %>
+      <%= tinymce %>
+   </div>
+
+
+    <div class="mb-6">
+      <%= form.label :tags, class: "block mb-2 text-sm font-medium text-blue-900" %>
+      <%# <label for="comma-separated-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Comma-Separated List</label> %>
+  <input type="text" id="comma-separated-input" class="border rounded px-3 py-2 w-full" placeholder="Enter items separated by commas">
+    </div>
+    <%# <div class="mb-6">
+      <%= form.label :password, class: "block mb-2 text-sm font-medium text-gray-900" %>
+      <%# <%= form.password_field :password, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+    <%# </div> %> 
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+  
+  <% end %>
+
 </div>
