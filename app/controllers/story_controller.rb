@@ -1,5 +1,7 @@
 class StoryController < ApplicationController
+
   def new
+    @story = Story.new
   end
 
   def create
@@ -16,5 +18,10 @@ class StoryController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def story_params
   end
 end
