@@ -1,16 +1,18 @@
 <div>
   <h1 class="font-bold text-4xl text-blue-500">Write Something ....</h1>
  
-  <%= form_with model: @user, local: true do |form| %>
+  <%# <%= form_with(model: @story, url: story_path(@story), method: "post") do |form| %>
+    <%= form_with model: @story, url: new_story_path(@story), local: true do |form| %>
+
     <div class="mb-6">
       <%= form.label :title, class: "block mb-2 text-sm font-medium text-blue-900" %>
-      <%= form.text_field :email, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+      <%= form.text_field :title, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
     </div>
     <div class="mb-6">
       <%= form.label :body, class: "block mb-2 text-sm font-medium text-gray-900" %>
       <%# <%= form.password_field :password, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
 
-      <%= text_area_tag :content, "Ans so it goes ...", :class => "tinymce" %>
+      <%= form.text_area :body, :class => "tinymce" %>
       <%= tinymce %>
    </div>
 
