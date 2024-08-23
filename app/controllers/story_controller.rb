@@ -6,9 +6,17 @@ class StoryController < ApplicationController
 
   def create
     # binding.pry
+    tag_names = params["story"]["tag_ids"].split(',')
+    tags = Tag.where(label: tag_names).map(&:id)
     @story = Story.new(story_params)
     @story.assign_user
     # binding.pry
+    if tags&.present?
+      tags.each do |tag|
+        @story.story_tags.build(tag_id: tag)
+      end
+    end
+
     if @story.save
       flash[:notice] = "Story Posted!!"
       redirect_to story_index_path
@@ -35,6 +43,6 @@ class StoryController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :body, :user_id)
+    params.require(:story).permit(:title, :body, :user_id, :status)
   end
 end

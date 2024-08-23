@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'story/new'
+  post '/new_story' => "story#create"
   get 'story/update'
   get 'story/show'
   get 'story/index'

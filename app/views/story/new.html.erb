@@ -1,5 +1,6 @@
-<div>
+<div class="mx-auto">
   <h1 class="font-bold text-4xl text-blue-500">Write Something ....</h1>
+  <br>
  
   <%# <%= form_with(model: @story, url: story_path(@story), method: "post") do |form| %>
     <%= form_with model: @story, url: new_story_path(@story), local: true do |form| %>
@@ -18,9 +19,11 @@
 
 
     <div class="mb-6">
+    
       <%= form.label :tags, class: "block mb-2 text-sm font-medium text-blue-900" %>
       <%# <label for="comma-separated-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Comma-Separated List</label> %>
-  <input type="text" id="comma-separated-input" class="border rounded px-3 py-2 w-full" placeholder="Enter items separated by commas">
+   <%= form.text_field :tag_ids,  class: "border rounded px-3 py-2 w-full", placeholder: "Enter items separated by commas" %>
+  <p> <%= Tag.active_tags.map(&:label).first(5) %> </p>
     </div>
     <%# <div class="mb-6">
       <%= form.label :password, class: "block mb-2 text-sm font-medium text-gray-900" %>
