@@ -1,0 +1,49 @@
+<div class="card bg-white shadow-md rounded-lg overflow-hidden">
+  <h1 class="text-3xl font-bold text-gray-800">Stories</h1>
+
+  <div class="p-4">
+    <% @stories.each do |story| %>
+    <h2 class="text-2xl font-bold text-gray-900"><%= story.title %></h2>
+    <p class="text-gray-700 mt-2">
+     <%= story.body %>
+    </p>
+    <div class="flex   
+ justify-between mt-4">
+      <p class="text-gray-500"> <%= story.author %></p>
+      <div class="flex space-x-2">
+        <%= link_to 'Edit', "edit_story_path(@story)", class: 'text-blue-500 hover:text-blue-700' %>
+        <%= link_to 'Delete', "story_path(@story)", method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-red-500 hover:text-red-700' %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold text-gray-800">Stories</h1>
+  <table class="w-full table-auto">
+    <thead>
+      <tr>
+        <th class="px-4 py-2 text-left text-gray-500">Title</th>
+        <th class="px-4 py-2 text-left text-gray-500">Body</th>
+        <th class="px-4 py-2 text-left text-gray-500">Author</th>
+        <th class="px-4 py-2 text-left text-gray-500">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @stories.each do |story| %>
+        <tr>
+          <td class="px-4 py-2 border-b border-gray-200"><%= story.title %></td>
+          <td class="px-4 py-2 border-b border-gray-200"><%= story.body %></td>
+          <td class="px-4 py-2 border-b border-gray-200"><%= story.author %></td>
+          <td class="px-4 py-2 border-b border-gray-200">
+            <%= link_to 'Show', "", class: 'text-blue-500 hover:text-blue-700' %>
+            <%= link_to 'Edit', "edit_your_model_path(your_model)", class: 'text-blue-500 hover:text-blue-700' %>
+            <%= link_to 'Destroy', "your_model", method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-red-500 hover:text-red-700' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -26,5 +26,8 @@ class Story < ApplicationRecord
     end
   end
 
+  def author
+    self.user.username
+  end
   
 end
