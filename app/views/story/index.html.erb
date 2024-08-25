@@ -1,23 +1,44 @@
 <div class="card bg-white shadow-md rounded-lg overflow-hidden">
-  <h1 class="text-3xl font-bold text-gray-800">Stories</h1>
-
   <div class="p-4">
-    <% @stories.each do |story| %>
-    <h2 class="text-2xl font-bold text-gray-900"><%= story.title %></h2>
+    <h2 class="text-2xl font-bold text-gray-900">Story Title</h2>
     <p class="text-gray-700 mt-2">
-     <%= story.body %>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,   
+ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     </p>
     <div class="flex   
  justify-between mt-4">
-      <p class="text-gray-500"> <%= story.author %></p>
+      <p class="text-gray-500">Author Name</p>
       <div class="flex space-x-2">
         <%= link_to 'Edit', "edit_story_path(@story)", class: 'text-blue-500 hover:text-blue-700' %>
         <%= link_to 'Delete', "story_path(@story)", method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-red-500 hover:text-red-700' %>
       </div>
     </div>
   </div>
-  <% end %>
+</div>   
+   
+   
+   
+    <div class="card bg-white shadow-md rounded-lg overflow-hidden">
+
+      <% @stories.each do |story| %>
+
+  <div class="p-4">
+    <h2 class="text-2xl font-bold text-gray-900"><%= story.title %></h2>
+    <p class="text-gray-700 mt-2">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,   
+ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <%= story.body %>
+    </p>
+    <div class="flex   
+ justify-between mt-4">
+      <p class="text-gray-500"><%= "By: #{story.author}" %></p> <br>
+      <div class="flex space-x-2">
+        <%= link_to 'Edit', "edit_story_path(@story)", class: 'text-blue-500 hover:text-blue-700' %>
+        <%= link_to 'Delete', "story_path(@story)", method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-red-500 hover:text-red-700' %>
+      </div>
+    </div>
+  </div>
 </div>
+<% end %>
 
 
 <div class="container mx-auto px-4 py-8">
