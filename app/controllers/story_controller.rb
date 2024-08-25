@@ -19,7 +19,7 @@ class StoryController < ApplicationController
 
     if @story.save
       flash[:notice] = "Story Posted!!"
-      redirect_to story_index_path
+      redirect_to stories_path
     else
       @errors = @story.errors.objects.first.full_message
       flash[:alert] = "#{@errors}"
