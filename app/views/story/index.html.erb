@@ -1,6 +1,6 @@
 
 <div class="container mx-auto px-4 py-8">
-  <h1 class="font-bold text-4xl text-cyan-500 text-center">Stories</h1>
+  <h1 class="font-bold text-4xl text-cyan-600 text-center">Stories</h1>
   <hr>
     <br>
 
@@ -8,7 +8,7 @@
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"> <% @stories.each do |story| %>
       <div class="card bg-white shadow-md rounded-lg overflow-hidden">
         <div class="p-8">
-          <h2 class="text-2xl font-bold text-gray-900"><%= story.title %></h2>
+          <h2 class="text-2xl font-bold text-gray-900"><%= link_to story.title, "/story/#{story.id}", class: "hover:text-cyan-700" %></h2>
           <p class="text-gray-700 mt-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,   
    
@@ -16,7 +16,7 @@
  <%= story.body %>
           </p>
           <div class="flex justify-between items-center mt-4">
-            <p class="text-gray-500"><%= "By: #{story.author}" %></p>
+            <p class="text-cyan-700"><%= "By: #{story.author}" %></p>
             <div class="flex space-x-2">
               <%= link_to 'Edit', "edit_story_path(@story)", class: 'text-blue-500 hover:text-blue-700' %>
               <%= link_to 'Delete', "story_path(@story)", method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-red-500 hover:text-red-700' %>

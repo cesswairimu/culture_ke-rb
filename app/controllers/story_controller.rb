@@ -31,6 +31,7 @@ class StoryController < ApplicationController
   end
 
   def show
+    @story = Story.find_by_id params[:id]
   end
 
   def index

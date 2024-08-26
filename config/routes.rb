@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get 'story/new'
   post '/new_story' => "story#create"
   get 'story/update'
-  get 'story/show'
+  get 'story/:id' => "story#show"
+  get 'story/:id/edit' => "story#edit"
   get '/stories' => 'story#index'
   get 'user/new'
   get 'user/index'
