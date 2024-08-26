@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'story/new'
   post '/new_story' => "story#create"
   get 'story/update'
