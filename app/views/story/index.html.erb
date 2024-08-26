@@ -1,54 +1,29 @@
-<h2> Stories </h2> 
-   
-   
-   
-    <div class="card bg-white shadow-md rounded-lg overflow-hidden">
-
-      <% @stories.each do |story| %>
-
-  <div class="p-8">
-    <h2 class="text-2xl font-bold text-gray-900"><%= story.title %></h2>
-    <p class="text-gray-700 mt-2">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,   
- quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <%= story.body %>
-    </p>
-    <div class="flex   
- justify-between mt-4">
-      <p class="text-gray-500"><%= "By: #{story.author}" %></p> <br>
-      <div class="flex space-x-2">
-        <%= link_to 'Edit', "edit_story_path(@story)", class: 'text-blue-500 hover:text-blue-700' %>
-        <%= link_to 'Delete', "story_path(@story)", method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-red-500 hover:text-red-700' %>
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>
-
 
 <div class="container mx-auto px-4 py-8">
-  <h1 class="text-3xl font-bold text-gray-800">Stories</h1>
-  <table class="w-full table-auto">
-    <thead>
-      <tr>
-        <th class="px-4 py-2 text-left text-gray-500">Title</th>
-        <th class="px-4 py-2 text-left text-gray-500">Body</th>
-        <th class="px-4 py-2 text-left text-gray-500">Author</th>
-        <th class="px-4 py-2 text-left text-gray-500">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @stories.each do |story| %>
-        <tr>
-          <td class="px-4 py-2 border-b border-gray-200"><%= story.title %></td>
-          <td class="px-4 py-2 border-b border-gray-200"><%= story.body %></td>
-          <td class="px-4 py-2 border-b border-gray-200"><%= story.author %></td>
-          <td class="px-4 py-2 border-b border-gray-200">
-            <%= link_to 'Show', "", class: 'text-blue-500 hover:text-blue-700' %>
-            <%= link_to 'Edit', "edit_your_model_path(your_model)", class: 'text-blue-500 hover:text-blue-700' %>
-            <%= link_to 'Destroy', "your_model", method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-red-500 hover:text-red-700' %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <h1 class="font-bold text-4xl text-cyan-500 text-center">Stories</h1>
+  <hr>
+    <br>
+
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"> <% @stories.each do |story| %>
+      <div class="card bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="p-8">
+          <h2 class="text-2xl font-bold text-gray-900"><%= story.title %></h2>
+          <p class="text-gray-700 mt-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,   
+   
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   
+ <%= story.body %>
+          </p>
+          <div class="flex justify-between items-center mt-4">
+            <p class="text-gray-500"><%= "By: #{story.author}" %></p>
+            <div class="flex space-x-2">
+              <%= link_to 'Edit', "edit_story_path(@story)", class: 'text-blue-500 hover:text-blue-700' %>
+              <%= link_to 'Delete', "story_path(@story)", method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-red-500 hover:text-red-700' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
