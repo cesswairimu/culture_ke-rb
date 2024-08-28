@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   get 'story/:id' => "story#show"
   get 'story/:id/edit' => "story#edit"
   get '/stories' => 'story#index'
-  get 'user/new'
-  get 'user/index'
-  get 'user/edit'
-  get 'user/update'
+  get 'users/new'
+  post '/users/new' => "users#create"
+  get 'users' => "users#index"
+  get 'users/edit'
+  get 'users/update'
 
   root 'main_pages#home'
   get 'main_pages/about'
