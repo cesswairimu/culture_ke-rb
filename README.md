@@ -1,6 +1,6 @@
 
 # Culture ruby mvp
-**mvp for: ** [Culture ke](https://github.com/cesswairimu/culture_ke)
+**mvp for:** [Culture ke](https://github.com/cesswairimu/culture_ke)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
